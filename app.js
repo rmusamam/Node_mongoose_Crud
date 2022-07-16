@@ -21,5 +21,5 @@ app.listen(port, () => {
     console.log(`server is active now ${port}`);
 });
 app.get('/',(req,res)=>{
-    res.send('jdasdkjasdsa')
+    res.send('server Activate')
 })
