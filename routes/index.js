@@ -74,12 +74,3 @@ router.get('/api/employee/delete/:id',(req,res)=>{
 })
 
 module.exports = router;
-
-// ({},(err,dara)=>{
-//     if(!err){
-//         res.send(data)
-//     }
-//     else{
-//         console.log(err)
-//     }
-// })
