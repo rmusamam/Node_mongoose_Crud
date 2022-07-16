@@ -17,10 +17,6 @@ app.use('/',router)
 //load Config
 dotenv.config({ path: path.resolve(__dirname, 'config/config.env') })
 
-// Routes
-// app.use('/',require('./routes/index'))
-
-// console.log(router)
 
 app.listen(port, () => {
     console.log(`server is active now ${port}`);
