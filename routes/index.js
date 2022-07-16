@@ -13,23 +13,23 @@ router.get("/api/employees", (req, res) => {
   
 });
 
-// router.post('/api/employee/add',(req,res)=>{
-//     console.log(req.body)
-//     const emp= new Employee({
-//         name: req.body.name,
-//         email: req.body.email,
-//         salary: req.body.salary
-//     })
-//     emp.save((err,data)=>{
-//             // console.log(data)
-//             res.status(200).json({
-//                 code: 200,
-//                 message: 'employee added',
-//                 addEmployee: data
+router.post('/api/employee/add',(req,res)=>{
+    console.log(req.body)
+    const emp= new Employee({
+        name: req.body.name,
+        email: req.body.email,
+        salary: req.body.salary
+    })
+    emp.save((err,data)=>{
+            // console.log(data)
+            res.status(200).json({
+                code: 200,
+                message: 'employee added',
+                addEmployee: data
 
-//         })
-//     })
-// })
+        })
+    })
+})
 
 
 router.get('/api/employee/:id',(req,res)=>{
