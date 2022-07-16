@@ -1,25 +1,30 @@
 const express = require("express");
-
 const dotenv = require("dotenv");
-
+const body_parser= require('body-parser')
 const path = require('path');
+
 const app= express();
-// require('dotenv').config({ path: './config/config.env'})
-require('dotenv').config({ path: path.resolve(__dirname, 'config/config.env') })
+const db=require('./config/db');
 
 const port = process.env.PORT ;
-console.log(port);
- require('./config/db');
-// dotenv.config('./config/.env');
+
+const router=require('./routes/index');
+
+// app.use(express.json())
+app.use(body_parser.json())
+app.use('/',router)
 
 //load Config
+dotenv.config({ path: path.resolve(__dirname, 'config/config.env') })
 
-// dotenv.config({path:'./config/config.env'});
-// connectDB();
+// Routes
+// app.use('/',require('./routes/index'))
+
+// console.log(router)
 
 app.listen(port, () => {
     console.log(`server is active now ${port}`);
 });
 app.get('/',(req,res)=>{
-    res.send('server Activate')
+    res.send('Server Activated')
 })
